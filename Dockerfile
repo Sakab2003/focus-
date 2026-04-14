@@ -15,6 +15,4 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 EXPOSE 10000
 
-CMD php artisan serve --host=0.0.0.0 --port=10000
-RUN chmod -R 775 storage bootstrap/cache
-RUN chown -R www-data:www-data storage bootstrap/cache
+CMD php artisan config:clear && php artisan serve --host=0.0.0.0 --port=10000
